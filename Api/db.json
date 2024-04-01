@@ -1,0 +1,40 @@
+{
+  "users": [
+    {
+      "id": "1",
+      "name": "devil",
+      "age": "15",
+      "email": "nitinjun006@gmail.com"
+    },
+    {
+      "id": "1",
+      "name": "devil",
+      "age": "15",
+      "email": "nitinjun006@gmail.com"
+    },
+    {
+      "id": 1,
+      "name": "devil",
+      "age": "15",
+      "email": "nitinjun006@gmail.com"
+    },
+    {
+      "id": 1,
+      "name": "devil",
+      "age": "15",
+      "email": "nitinjun006@gmail.com"
+    },
+    {
+      "id": 1,
+      "name": "devil",
+      "age": "15",
+      "email": "nitinjun006@gmail.com"
+    },
+    {
+      "id": 1,
+      "name": "ram",
+      "age": "15",
+      "email": "nitinjun006@gmail.com"
+    }
+  ]
+}
