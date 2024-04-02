@@ -1,5 +1,6 @@
 import React from 'react';
 import { View, Button, Text } from 'react-native';
+import {Router,Scene,Actions} from 'react-native-router-flux'
 
 const HomeScreen = ({ navigation }:{navigation:any}) => {
   return (
