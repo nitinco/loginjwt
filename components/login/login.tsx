@@ -38,6 +38,7 @@ const Login = (props:{navigation:any}) => {
           <Text style={tw`mt-5`}>Did not you have account?</Text>
           {/* <TouchableOpacity onPress={()=>props.navigation.navigate("Signup")}>Signup</TouchableOpacity> */}
           <Button  onPress={()=>props.navigation.navigate("Signup")}>SignUp</Button>
+          <Button  onPress={()=>props.navigation.navigate("Test")}>Test</Button>
         </Layout>
 
 

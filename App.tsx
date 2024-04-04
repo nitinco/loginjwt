@@ -9,15 +9,20 @@ import DetailsScreen from './components/login/DetailScreen';
 import Login from './components/login/login';
 import { View } from 'react-native';
 import SignUp from './components/Signup/SignUp';
+import Test from './components/Test/Test';
 
 
 const Stack = createNativeStackNavigator();
-const getApiData=async()=>{
-  const Url="http://192.0.2.2:3000/users";
-  let result= await fetch(Url)
-  result=await result.json();
-  console.warn(result);
-}
+
+
+
+// const getApiData=async()=>{
+//   const Url="http://192.0.2.2:3000/users";
+//   let result= await fetch(Url)
+//   result=await result.json();
+//   console.warn(result);
+// }
+
 const App = () => {
   return (
     <NavigationContainer>
@@ -26,6 +31,7 @@ const App = () => {
         <Stack.Screen name="Details" component={DetailsScreen} />
         <Stack.Screen name="Login" component={Login} options={{headerShown:false}}/>
         <Stack.Screen name="Signup" component={SignUp} options={{headerShown:false}}/>
+        <Stack.Screen name="Test" component={Test} options={{headerShown:false}}/>
       </Stack.Navigator>
     </NavigationContainer>
     

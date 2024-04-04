@@ -32,11 +32,7 @@ const Signup = (props:{navigation:any}) => {
               style={styles.input}
               placeholder='password'
             />
-            {/* <Text category='h5'>Confirm-Password</Text>
-            <Input
-              style={styles.input}
-              placeholder='password'
-            /> */}
+          
           </Layout>
 
         </Layout>
