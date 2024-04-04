@@ -1,82 +1,50 @@
-// import React from 'react';
-// import { Button, SafeAreaView, StyleSheet, TextInput, View } from 'react-native';
-
-// const TextInputExample = () => {
-//     const [text, onChangeText] = React.useState('');
-//     const [number, onChangeNumber] = React.useState('');
-
-//     return (
-//         <SafeAreaView>
-//             <View style={styles.forum}>
-//                 <TextInput
-//                     style={styles.input}
-//                     onChangeText={onChangeText}
-//                     placeholder='email-id or username'
-//                     keyboardType='email-address'
-//                     value={text}
-//                 />
-//                 <TextInput
-//                     style={styles.input}
-//                     onChangeText={onChangeNumber}
-//                     value={number}
-//                     placeholder="password"
-//                     keyboardType="numeric"
-//                 />
-//                 <Button
-//                 title='Login'
-//                 onPress={}
-//                 />
-//             </View>
-
-//         </SafeAreaView>
-//     );
-// };
-
-// const styles = StyleSheet.create({
-//     forum:{
-//         alignItems:'center',
-//         backgroundColor:'red'
-
-//     },
-//     input: {
-//         width:'80%',
-//         height: 40,
-//         margin: 12,
-//         borderWidth: 1,
-//         padding: 10,
-//     },
-
-// });
-
-// export default TextInputExample;
 import React from 'react';
 import * as eva from '@eva-design/eva';
-import { ApplicationProvider, Layout, Text, Input, Button } from '@ui-kitten/components';
+import { ApplicationProvider, Layout, Text, Input} from '@ui-kitten/components';
+import { Button } from 'react-native-paper';
 import styles from './styles';
+import tw from 'twrnc'
 
 
-const HomeScreen = () => (
-  <Layout style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
-    <Text category='h1'>HOME</Text>
-  </Layout>
-);
-
-export function Login({ navigation }: { navigation: any }): React.ReactElement {
+const Login = (props:{navigation:any}) => {
+  // console.log(props)
 
 
   return (
-    <Layout>
-      <Layout style={{  flex:1,justifyContent: 'center', alignItems: 'center' }}>
-        <Text category='h1'>HOME</Text>
+    <ApplicationProvider {...eva} theme={eva.light}>
+      <Layout style={styles.Contianer}>
+        <Layout style={styles.h1}>
+          <Text category='h1'>Login</Text>
+        </Layout>
+        <Layout style={styles.layout}>
+          <Layout style={styles.layout2}>
+            <Text category='h5' >Username or email</Text>
+            <Input
+              style={styles.input}
+              keyboardType='email-address'
+              placeholder='example.com'
+            />
+            <Text category='h5'>Password</Text>
+            <Input
+              style={styles.input}
+              placeholder='password'
+            />
+          </Layout>
+
+        </Layout>
+        <Layout style={styles.layout3}>
+          <Button onPress={() => props.navigation.navigate("Signup")} style={[styles.logButton]}>
+            <Text style={tw`text-xl  text-white`}>Login</Text></Button>
+          <Text style={tw`mt-5`}>Did not you have account?</Text>
+          {/* <TouchableOpacity onPress={()=>props.navigation.navigate("Signup")}>Signup</TouchableOpacity> */}
+          <Button  onPress={()=>props.navigation.navigate("Signup")}>SignUp</Button>
+        </Layout>
+
+
       </Layout>
-    </Layout>
+    </ApplicationProvider>
   );
 }
 
 
-export default () => (
-  <ApplicationProvider {...eva} theme={eva.light}>
-    {/* <HomeScreen /> */}
-    <Login navigation={undefined} />
-  </ApplicationProvider>
-);
+export default Login;

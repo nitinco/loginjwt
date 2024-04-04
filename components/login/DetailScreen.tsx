@@ -3,17 +3,18 @@
 import React from 'react';
 import { View, Button, Text } from 'react-native';
 
-const DetailsScreen = ({ navigation }:{navigation:any}) => {
+const DetailsScreen = (props:{navigation:any}) => {
+
   return (
     <View>
       <Text>Details Screen</Text>
       <Button
         title="Go back"
-        onPress={() => navigation.goBack()}
+        onPress={() => props.navigation.goback()}
       />
       <Button
         title="Go login"
-        onPress={() => navigation.navigate('login')}
+        onPress={() => props.navigation.navigate("Signup")}
       />
     </View>
   );

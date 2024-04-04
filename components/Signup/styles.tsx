@@ -10,22 +10,20 @@ const styles = StyleSheet.create(
             height:'100%',
             // backgroundColor:'purple',
             justifyContent:'center',
-        // paddingVertical:20,
             
         },
     h1:{
         textAlign:'left',
         // justifyContent:'top', 
         alignItems: 'center',
-        marginBottom:'40%'
-
+        marginBottom:'20%'
     },
     layout:{
         
         alignItems:'center',
+        
         // backgroundColor:'red',
-        textAlign:'left',
-       
+        textAlign:'left'
     },
     layout2:{
         // backgroundColor:'green',

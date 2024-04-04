@@ -3,12 +3,15 @@
 import 'react-native-gesture-handler';
 import React from 'react';
 import { NavigationContainer } from '@react-navigation/native';
-import { createStackNavigator } from '@react-navigation/stack';
+import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import  HomeScreen from './components/login/HomeScreen';
 import DetailsScreen from './components/login/DetailScreen';
-import login from './components/login/login';
+import Login from './components/login/login';
+import { View } from 'react-native';
+import SignUp from './components/Signup/SignUp';
 
-const Stack = createStackNavigator();
+
+const Stack = createNativeStackNavigator();
 const getApiData=async()=>{
   const Url="http://192.0.2.2:3000/users";
   let result= await fetch(Url)
@@ -18,12 +21,14 @@ const getApiData=async()=>{
 const App = () => {
   return (
     <NavigationContainer>
-      <Stack.Navigator initialRouteName="login">
+      <Stack.Navigator initialRouteName="Login">
         <Stack.Screen name="Home" component={HomeScreen} />
         <Stack.Screen name="Details" component={DetailsScreen} />
-        <Stack.Screen name="login" component={login} />
+        <Stack.Screen name="Login" component={Login} options={{headerShown:false}}/>
+        <Stack.Screen name="Signup" component={SignUp} options={{headerShown:false}}/>
       </Stack.Navigator>
     </NavigationContainer>
+    
   );
 };
 

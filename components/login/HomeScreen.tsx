@@ -2,7 +2,8 @@ import React from 'react';
 import { View, Button, Text } from 'react-native';
 import {Router,Scene,Actions} from 'react-native-router-flux'
 
-const HomeScreen = ({ navigation }:{navigation:any}) => {
+const HomeScreen = (props:{navigation:any}) => {
+  
   return (
     <View>
       <Text>Home Screen</Text>
@@ -10,7 +11,7 @@ const HomeScreen = ({ navigation }:{navigation:any}) => {
       <Text>Home Screen</Text>
       <Button
         title="Go to Details"
-        onPress={() => navigation.navigate('Details')}
+        onPress={() => props.navigation.navigate("Details")}
         
       />
     </View>
