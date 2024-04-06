@@ -1,11 +1,22 @@
-import { StyleSheet, Text, View } from 'react-native'
-import React from 'react'
+import { StyleSheet, View } from 'react-native'
+import React, { useEffect } from 'react'
+import {ApplicationProvider, Layout, Text} from '@ui-kitten/components'
+import * as eva from '@eva-design/eva';
+import axios from 'axios'
+
 
 export default function Test() {
+
+
   return (
-    <View>
-      <Text>Test</Text>
-    </View>
+    <ApplicationProvider {...eva} theme={eva.light}>
+      <Layout>
+      <Text style={{justifyContent:'center',alignItems:'center'}}>Test</Text>
+    </Layout>
+    </ApplicationProvider>
+    
+      
+    
   )
 }
 

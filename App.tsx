@@ -8,8 +8,10 @@ import  HomeScreen from './components/login/HomeScreen';
 import DetailsScreen from './components/login/DetailScreen';
 import Login from './components/login/login';
 import { View } from 'react-native';
-import SignUp from './components/Signup/SignUp';
+import SignUp from './components/Signup/SignUpScreen';
 import Test from './components/Test/Test';
+import SplashScreen from './components/SplashScreen/SplashScreen';
+import SignupScreen from './components/Signup/SignUpScreen';
 
 
 const Stack = createNativeStackNavigator();
@@ -26,12 +28,13 @@ const Stack = createNativeStackNavigator();
 const App = () => {
   return (
     <NavigationContainer>
-      <Stack.Navigator initialRouteName="Login">
+      <Stack.Navigator initialRouteName="Home">
         <Stack.Screen name="Home" component={HomeScreen} />
+        <Stack.Screen name="Splash" component={SplashScreen} options={{headerShown:false}}/>
         <Stack.Screen name="Details" component={DetailsScreen} />
         <Stack.Screen name="Login" component={Login} options={{headerShown:false}}/>
-        <Stack.Screen name="Signup" component={SignUp} options={{headerShown:false}}/>
-        <Stack.Screen name="Test" component={Test} options={{headerShown:false}}/>
+        <Stack.Screen name="SignUp" component={SignupScreen} options={{headerShown:false}}/>
+        <Stack.Screen name="Test" component={Test} options={{headerShown:true}}/>
       </Stack.Navigator>
     </NavigationContainer>
     
