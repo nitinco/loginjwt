@@ -41,6 +41,30 @@
       "name": "gunnu",
       "age": "56",
       "email": "fun@gmail.com"
+    },
+    {
+      "id": "",
+      "username": "ashish",
+      "email": "devikskjd@gmail.com",
+      "password": "12345"
+    },
+    {
+      "id": "",
+      "username": "sadhaya",
+      "email": "sadhaya@gamail,com",
+      "password": "988967"
+    },
+    {
+      "id": "",
+      "username": "Akash",
+      "email": "Gunn#@gmail.com",
+      "password": "56789"
+    },
+    {
+      "id": "",
+      "username": "Ashish ",
+      "email": "Thexyz@gmail.com",
+      "password": "123456"
     }
   ]
 }

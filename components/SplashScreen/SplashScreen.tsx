@@ -4,9 +4,10 @@ import * as eva from '@eva-design/eva';
 import { ApplicationProvider, Layout, Text } from '@ui-kitten/components';
 import AsyncStorage from 'react-native'
 
-const [jwtToken,setJwtToken] = useState(null)
 
 // const isJwtToken = async() =>{
+  // const [jwtToken,setJwtToken] = useState(null)
+
 // useEffect(()=>{
 //     getStoredToken();
 // },[]);

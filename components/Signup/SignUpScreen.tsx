@@ -5,11 +5,17 @@ import { Button } from 'react-native-paper';
 import styles from './styles';
 import tw from 'twrnc'
 import axios from 'axios'
+import { ToastAndroid } from 'react-native';
+import AsyncStorage from '@react-native-async-storage/async-storage';
+
 
 
 
 const SignupScreen = (props:{navigation:any}) => {
-
+  
+const login = () =>{
+  props.navigation.navigate('Login');
+}
   const [username, setUsername] = useState('');
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
@@ -18,19 +24,22 @@ const SignupScreen = (props:{navigation:any}) => {
 
   const signUp = async () => {
     try {
-      const response = await axios.post('https://8792-2409-4085-215-d4a4-c434-2d85-ec80-d5fb.ngrok-free.app/users', {
+      const response = await axios.post('https://82c0-2409-4085-208-112-1d23-e631-4fd0-a75e.ngrok-free.app/users', {
         id,
         username,
         email,
         password,
-      });
+        
+        });
       
       const jwtToken = response.data.token;
+      await AsyncStorage.setItem('jwtToken', jwtToken);
 
-      props.navigation.replace('HomeScreen');
+      props.navigation.replace('Home');
+      ToastAndroid.show( 'Signup Successfully',ToastAndroid.SHORT);
     } catch (error) {
-      console.error('Error signing up:', error);
-      console.warn('Error', 'Failed to sign up. Please try again.');
+      // console.error('Error signing up:', error);
+      ToastAndroid.show( 'Failed to sign up. Please try again.',ToastAndroid.SHORT);
     }
   };
 
@@ -72,7 +81,7 @@ const SignupScreen = (props:{navigation:any}) => {
           <Button style={[styles.logButton]} onPress={signUp}>
             <Text style={tw`text-xl  text-white`}>SignUp</Text></Button>
           <Text style={tw`mt-5`}>Already have account?  </Text>
-          <Button onPress={props.navigation.navigate('Login')}>Log-in</Button>
+          <Button onPress={login}>Log-in</Button>
         </Layout>
 
 
