@@ -33,17 +33,15 @@ interface User {
   credentialsNonExpired: boolean;
 }
 
-interface LoginProps {
-  navigation: NavigationProp<RootStackParamList, 'Login'>; // Replace RootStackParamList with your actual interface name and 'Login' with your actual screen name
-}
+ 
 
 // interface LoginData {
 //   emailOrUsername: string;
 //   password: string;
 // }
 
-const Login: React.FC<LoginProps> = () => {
-  const navigation = useNavigation();
+const Login: React.FC= ({navigation}) => {
+  // const navigation = useNavigation();
 
   // const [users, setUsers] = useState<User[]>([]);
   const [emailOrUsername, setEmailOrUsername] = useState('');
@@ -150,8 +148,8 @@ const Login: React.FC<LoginProps> = () => {
             <Text style={tw`text-xl  text-white`}>Login</Text>
           </Button>
           <Text style={tw`mt-5`}>Did not you have account?</Text>
-          <Button onPress={() => navigation.navigate('SignUp')}>SignUp</Button>
-          <Button onPress={() => navigation.navigate('Test')}>Test</Button>
+          <Button onPress={() => navigation.push('SignUp')}>SignUp</Button>
+          <Button onPress={() => navigation.push('Test')}>Test</Button>
         </Layout>
       </Layout>
     </ApplicationProvider>

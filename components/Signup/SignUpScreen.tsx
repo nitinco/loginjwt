@@ -8,10 +8,8 @@ import axios from 'axios';
 import {ToastAndroid} from 'react-native';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 
-const SignupScreen = (props: {navigation: any}) => {
-  const login = () => {
-    props.navigation.navigate('Login');
-  };
+const SignupScreen = ({navigation}) => {
+  
   const [username, setUsername] = useState('');
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
@@ -32,7 +30,7 @@ const SignupScreen = (props: {navigation: any}) => {
       const jwtToken = response.data.token;
       await AsyncStorage.setItem('jwtToken', jwtToken);
 
-      props.navigation.replace('Home');
+      navigation.replace('Home');
       ToastAndroid.show('Signup Successfully', ToastAndroid.SHORT);
     } catch (error) {
       // console.error('Error signing up:', error);
@@ -78,7 +76,7 @@ const SignupScreen = (props: {navigation: any}) => {
             <Text style={tw`text-xl  text-white`}>SignUp</Text>
           </Button>
           <Text style={tw`mt-5`}>Already have account? </Text>
-          <Button onPress={login}>Log-in</Button>
+          <Button onPress={()=>navigation.push('Login')}>Log-in</Button>
         </Layout>
       </Layout>
     </ApplicationProvider>

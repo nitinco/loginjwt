@@ -2,7 +2,7 @@
 
 import 'react-native-gesture-handler';
 import React from 'react';
-import {NavigationContainer} from '@react-navigation/native';
+import { NavigationContainer } from '@react-navigation/native';
 import HomeScreen from './components/login/HomeScreen';
 import DetailsScreen from './components/login/DetailScreen';
 import Login from './components/login/login';
@@ -12,9 +12,12 @@ import Test from './components/Test/Test';
 import SplashScreen from './components/SplashScreen/SplashScreen';
 import SignupScreen from './components/Signup/SignUpScreen';
 
-import {createStackNavigator} from '@react-navigation/stack';
-import {RootStackParamList} from './RootStackParamList';
+import { createStackNavigator } from '@react-navigation/stack';
+import { RootStackParamList } from './RootStackParamList';
 import Logout from './components/logout/logout';
+import Google from './components/Google/Google';
+import Welcome from './components/WelCome/Welcome';
+import Welcome2 from './components/WelCome/Welcome2';
 
 const RootStack = createStackNavigator<RootStackParamList>();
 
@@ -23,33 +26,48 @@ const RootStack = createStackNavigator<RootStackParamList>();
 const App = () => {
   return (
     <NavigationContainer>
-      <RootStack.Navigator initialRouteName="Login">
+      <RootStack.Navigator initialRouteName="Welcome">
         <RootStack.Screen name="Home" component={HomeScreen} />
         <RootStack.Screen
           name="Splash"
           component={SplashScreen}
-          options={{headerShown: false}}
+          options={{ headerShown: false }}
         />
         <RootStack.Screen name="Details" component={DetailsScreen} />
         <RootStack.Screen
           name="Login"
           component={Login}
-          options={{headerShown: false}}
+          options={{ headerShown: false }}
         />
         <RootStack.Screen
           name="SignUp"
           component={SignupScreen}
-          options={{headerShown: false}}
+          options={{ headerShown: false }}
         />
         <RootStack.Screen
           name="Test"
           component={Test}
-          options={{headerShown: false}}
+          options={{ headerShown: false }}
         />
         <RootStack.Screen
           name="Logout"
           component={Logout}
-          options={{headerShown: false}}
+          options={{ headerShown: false }}
+        />
+        <RootStack.Screen
+          name="GoogleSign"
+          component={Google}
+          options={{ headerShown: false }}
+        />
+        <RootStack.Screen
+          name="Welcome"
+          component={Welcome}
+          options={{ headerShown: false }}
+        />
+        <RootStack.Screen
+          name="Welcome2"
+          component={Welcome2}
+          options={{ headerShown: false }}
         />
       </RootStack.Navigator>
     </NavigationContainer>
