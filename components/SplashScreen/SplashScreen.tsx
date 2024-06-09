@@ -1,36 +1,26 @@
 /* eslint-disable react-native/no-inline-styles */
-import {StyleSheet, Animated} from 'react-native';
+import {Animated} from 'react-native';
 import React, {useEffect, useRef} from 'react';
 import * as eva from '@eva-design/eva';
 import {ApplicationProvider, Layout, Text} from '@ui-kitten/components';
+import {NavigationProp} from '@react-navigation/native';
+import {RootStackParamList} from '../../RootStackParamList';
+// import {Provider} from 'react-redux';
+// import {StackNavigationProp} from '@react-navigation/stack';
+// import {store} from '../../components/store/store';
 
-// const isJwtToken = async() =>{
-// const [jwtToken,setJwtToken] = useState(null)
+// type SplashScreenNavigationProp = StackNavigationProp<
+//   RootStackParamList,
+//   'Splash'
+// >;
 
-// useEffect(()=>{
-//     getStoredToken();
-// },[]);
+interface SplashProps {
+  navigation: NavigationProp<RootStackParamList, 'Splash'>; // Replace RootStackParamList with your actual interface name and 'Login' with your actual screen name
+}
 
-// const getStoredToken = async(props:{navigation:any}) =>{
-//     try {
-
-//         // const token = await AsyncStorage.getItem('jwtToken');/
-//         const token = await AsyncStorage.getItem(jwtToken);
-//         if(token!=null){
-//             setJwtToken(token)
-//             props.navigation.navigate('Home')
-//         }
-
-//     } catch (error) {
-//         console.error('Jwt key is not found:', error);
-//         props.navigation.navigate('Login')
-
-//     }
-// }
-
-// }
-
-export default function SplashScreen(props: {navigation: any}) {
+const Splash: React.FC<SplashProps> = () => {
+  // const navigation = useNavigation<SplashScreenNavigationProp>();
+  // export default function SplashScreen(props: {navigation: any}) {
   const fadeAnim = useRef(new Animated.Value(0)).current;
 
   // it is for animation of the splash screen
@@ -47,32 +37,12 @@ export default function SplashScreen(props: {navigation: any}) {
 
   useEffect(() => {
     setTimeout(() => {
-      props.navigation.replace('Login');
+      // navigation.navigate('Login');
     }, 1000);
   });
 
-  //check token is available or not
-  // useEffect(() => {
-  //   checkToken();
-  // }, []);
-
-  // const checkToken = async () => {
-  //   try {
-  //     const token = await AsyncStorage.getItem('jwtToken');
-  //     if (token !== null) {
-  //       //for success to get token
-  //       props.navigation.replace('HomeScreen');
-  //     } else {
-  //       // for failure for get token
-  //       props.navigation.replace('LoginScreen');
-  //     }
-  //   } catch (error) {
-  //     console.error('Error checking token:', error);
-
-  //   }
-  // };
-
   return (
+    // <Provider store={store}>
     <ApplicationProvider {...eva} theme={eva.dark}>
       <Animated.View
         style={{
@@ -100,13 +70,8 @@ export default function SplashScreen(props: {navigation: any}) {
         </Layout>
       </Animated.View>
     </ApplicationProvider>
+    // </Provider>
   );
-}
+};
 
-const styles = StyleSheet.create({
-  // image:{
-  //     height:200,
-  //     width:200,
-  //
-  // }
-});
+export default Splash;

@@ -7,12 +7,14 @@ const styles = StyleSheet.create({
     // backgroundColor:'purple',
     justifyContent: 'center',
     // paddingVertical:20,
+    // flex h-full justify-center 
   },
   h1: {
     textAlign: 'left',
     // justifyContent:'top',
     alignItems: 'center',
     marginBottom: '40%',
+    // mb-2/5 items-center text-left
   },
   layout: {
     alignItems: 'center',
