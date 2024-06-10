@@ -171,8 +171,8 @@ const Login: React.FC<LoginProps> = () => {
             <Button style={tw``} onPress={() => navigation.navigate('Logout')}>
               Logout
             </Button>
-            <Button style={tw``} onPress={() => navigation.navigate('Test')}>
-              Test
+            <Button style={tw``} onPress={() => navigation.navigate('NewLog')}>
+              NewLog
             </Button>
           </View>
         </Layout>

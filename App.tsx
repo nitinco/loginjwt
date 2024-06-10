@@ -15,6 +15,8 @@ import Login from './components/login/login';
 import Logout from './components/logout/logout';
 import SignUp from './components/Signup/SignUp';
 import {Provider} from 'react-redux';
+import NewLog from './components/newlog/NewLog';
+import { ThemeProvider } from './ThemeContext';
 
 const RootStack = createStackNavigator<RootStackParamList>();
 
@@ -23,44 +25,51 @@ const App: React.FC = () => {
 
   return (
     <Provider store={store}>
-      <NavigationContainer>
-        <RootStack.Navigator initialRouteName="Login">
-          <RootStack.Screen
-            name="Splash"
-            component={SplashScreen}
-            options={{headerShown: false}}
-          />
-          <RootStack.Screen
-            name="Home"
-            component={Home}
-            options={{
-              title: 'Home',
-              headerShown: false,
-            }}
-          />
-          <RootStack.Screen name="Details" component={DetailsScreen} />
-          <RootStack.Screen
-            name="Login"
-            component={Login}
-            options={{headerShown: false}}
-          />
-          <RootStack.Screen
-            name="SignUp"
-            component={SignUp}
-            options={{headerShown: false}}
-          />
-          <RootStack.Screen
-            name="Logout"
-            component={Logout}
-            options={{headerShown: false}}
-          />
-          <RootStack.Screen
-            name="Test"
-            component={Test}
-            options={{headerShown: false}}
-          />
-        </RootStack.Navigator>
-      </NavigationContainer>
+      <ThemeProvider>
+        <NavigationContainer>
+          <RootStack.Navigator initialRouteName="Login">
+            <RootStack.Screen
+              name="Splash"
+              component={SplashScreen}
+              options={{headerShown: false}}
+            />
+            <RootStack.Screen
+              name="NewLog"
+              component={NewLog}
+              options={{headerShown: false}}
+            />
+            <RootStack.Screen
+              name="Home"
+              component={Home}
+              options={{
+                title: 'Home',
+                headerShown: false,
+              }}
+            />
+            <RootStack.Screen name="Details" component={DetailsScreen} />
+            <RootStack.Screen
+              name="Login"
+              component={Login}
+              options={{headerShown: false}}
+            />
+            <RootStack.Screen
+              name="SignUp"
+              component={SignUp}
+              options={{headerShown: false}}
+            />
+            <RootStack.Screen
+              name="Logout"
+              component={Logout}
+              options={{headerShown: false}}
+            />
+            <RootStack.Screen
+              name="Test"
+              component={Test}
+              options={{headerShown: false}}
+            />
+          </RootStack.Navigator>
+        </NavigationContainer>
+      </ThemeProvider>
     </Provider>
   );
 };

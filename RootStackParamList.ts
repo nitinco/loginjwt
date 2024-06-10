@@ -5,5 +5,6 @@ export type RootStackParamList = {
   Login: undefined;
   Logout: undefined; // No params for Login screen
   SignUp: undefined;
-  Test: undefined; // No params for Test screen (can be customized later)
+  Test: undefined;
+  NewLog: undefined; // No params for Test screen (can be customized later)
 };
